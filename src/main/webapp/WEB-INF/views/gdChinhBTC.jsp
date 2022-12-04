@@ -1,8 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="com.example.springbootjsp.controller.ChangDuaDAO"
+<%@page import="com.example.springbootjsp.dao.ChangDuaDAO584"
         import="com.example.springbootjsp.model.*, java.util.*"
 %>
-<%@ page import="com.example.springbootjsp.model.ThanhVien" %>
+<%@ page import="com.example.springbootjsp.model.ThanhVien584" %>
 
 <!DOCTYPE html>
 <html>
@@ -68,7 +68,8 @@
     <div class="option-container">
 
         
-        <a class="link-move" href="gdChonChangDua.jsp">Đăng ký thi đấu</a> <br>
+        <a class="link-move" href="changdua">Đăng ký thi đấu</a> <br>
+        <a class="link-move" href="dsthidau">Đăng ký thi đấu</a> <br>
         <a class="link-move" href="#">Cập nhật kết quả chặng đua</a> <br>
         <a class="link-move" href="#">Xem bảng xếp hạng</a> <br>
         <a class="link-move" href="#">Quản lý giải đua</a> <br>

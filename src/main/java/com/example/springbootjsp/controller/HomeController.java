@@ -1,5 +1,7 @@
 package com.example.springbootjsp.controller;
 
+import com.example.springbootjsp.dao.ChangDuaDAO584;
+import com.example.springbootjsp.model.ChangDua584;
 import com.example.springbootjsp.model.Staff;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +29,10 @@ public class HomeController {
 
     @RequestMapping("changdua")
     public String changDua() {
+
+//        ChangDuaDAO584 changDua584 = new ChangDuaDAO584();
+//        List<ChangDua584> listChangDua584 = changDua584.getDSChangDua();
+
         return "gdChonChangDua";
     }
 
@@ -39,6 +45,22 @@ public class HomeController {
     @RequestMapping("taydua")
     public String tayDua() {
         return "gdChonTayDua";
+    }
+
+
+    @RequestMapping("doDangNhap")
+    public String dangnhap() {
+        return "gdChinhBTC";
+    }
+
+    @RequestMapping("doLuu")
+    public String doLuu() {
+        return "gdChinhBTC";
+    }
+
+    @RequestMapping("dsthidau")
+    public String dsthidau() {
+        return "gdDsThiDau";
     }
 
 //    @RequestMapping("gdChonChangDua.jsp")

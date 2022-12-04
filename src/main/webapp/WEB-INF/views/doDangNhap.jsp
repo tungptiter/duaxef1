@@ -1,9 +1,9 @@
 
 <%@ page language="java" contentType="text/html"
          pageEncoding="UTF-8"
-         import="java.util.ArrayList,com.example.springbootjsp.controller.*, com.example.springbootjsp.model.*"%>
-<%@ page import="com.example.springbootjsp.model.ThanhVien" %>
-<%@ page import="com.example.springbootjsp.controller.ThanhVienDAO" %>
+         import="java.util.ArrayList,com.example.springbootjsp.dao.*, com.example.springbootjsp.model.*"%>
+<%@ page import="com.example.springbootjsp.model.ThanhVien584" %>
+<%@ page import="com.example.springbootjsp.dao.ThanhVienDAO584" %>
 <%
     String username = (String) request.getParameter("username");
     String password = (String) request.getParameter("password");
@@ -13,11 +13,11 @@
     System.out.println(password);
     console.log("hello");
 
-    ThanhVien tv = new ThanhVien();
+    ThanhVien584 tv = new ThanhVien584();
     tv.setTendangnhap(username);
     tv.setMatkhau(password);
 
-    ThanhVienDAO dao = new ThanhVienDAO();
+    ThanhVienDAO584 dao = new ThanhVienDAO584();
     boolean check = dao.dangNhap(tv);
 
 

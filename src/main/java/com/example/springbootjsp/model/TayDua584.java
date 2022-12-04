@@ -1,11 +1,22 @@
 package com.example.springbootjsp.model;
 
-public class TayDua {
+public class TayDua584 {
     int id;
     String ten;
     String ngaysinh;
     String quoctich;
     String tieusu;
+
+    public TayDua584() {
+    }
+
+    public TayDua584(int id, String ten, String ngaysinh, String quoctich, String tieusu) {
+        this.id = id;
+        this.ten = ten;
+        this.ngaysinh = ngaysinh;
+        this.quoctich = quoctich;
+        this.tieusu = tieusu;
+    }
 
     public int getId() {
         return id;

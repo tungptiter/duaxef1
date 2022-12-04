@@ -2,15 +2,13 @@
 <%@page import="com.example.springbootjsp.dao.ChangDuaDAO584"
         import="com.example.springbootjsp.model.*, java.util.*"
 %>
-<%@ page import="com.example.springbootjsp.dao.ChangDuaDAO584" %>
 <%@ page import="com.example.springbootjsp.model.ThanhVien584" %>
-<%@ page import="com.example.springbootjsp.dao.TayDuaDAO584" %>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Chon chang dua</title>
+    <title>Trang chu BTC</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,6 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+
     <style>
         body {
 
@@ -28,7 +27,8 @@
             justify-content: center;
             padding-top: 5%;
         }
-        .td-container {
+
+        .btc-container {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -40,48 +40,40 @@
             height: 500px;
         }
 
-        .form-select {
-            min-width: 250px;
-            height: 50px;
+        .btc-title {
+            max-width: fit-content;
         }
-        .btn-cancel {
-            background-color: white;
-            border-color: #828A99!important;
+        .option-container {
+            width: 200px;
+        }
+        .link-move {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-<%
-//    ThanhVien tv = (ThanhVien) session.getAttribute("btc");
-//    if (tv == null) {
-//        response.sendRedirect("dangnhap.jsp?err=timeout");
-//    }
+<%--<%--%>
+<%--    ThanhVien tv = (ThanhVien) session.getAttribute("btc");--%>
+<%--    if (tv == null) {--%>
+<%--        response.sendRedirect("dangnhap.jsp?err=timeout");--%>
+<%--    }--%>
+<%--%>--%>
 
-    TayDuaDAO584 dao = new TayDuaDAO584();
-    ArrayList<TayDua584> listTayDua= dao.getDSTayDua();
-%>
+<div class="btc-container">
+    <h2 class="btc-title">Danh sách thi đấu</h2>
+<%--    <h3>Welcome, <%=tv.getHoten()%></h3>--%>
+    <div class="option-container">
+
+        
+        <a class="link-move" href="changdua">Đăng ký thi đấu</a> <br>
+        <a class="link-move" href="dsthidau">Đăng ký thi đấu</a> <br>
+    </div>
 
 
-<div class="td-container">
-    <h2> Chọn tay đua </h2>
-    <h4> Chặng đua: </h4>
-    <h4> Đội đua: </h4>
-    <form name="chontaydua" action="doLuu" method="post" >
-        <select class="form-select" id="floatingSelectTD" name="taydua">
-            <option value="nguyen tung" selected>-Chọn tay đua-</option>
-                        <%
-                            for (TayDua584 td : listTayDua) {
-                        %>
-                        <option value="<%=td.getId()%>"><%=td.getTen()%></option>
-
-                        <%
-                            }
-                        %>
-        </select>
-        <button type="button" class="mt-3 btn btn-cancel" style="float:left">Quay lại</button>
-        <button type="submit" class="mt-3 btn btn-primary" style="float:right">Lưu</button>
-    </form>
 </div>
 </body>
 </html>
+

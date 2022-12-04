@@ -1,9 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="com.example.springbootjsp.controller.ChangDuaDAO"
+<%@page import="com.example.springbootjsp.dao.ChangDuaDAO584"
         import="com.example.springbootjsp.model.*, java.util.*"
 %>
-<%@ page import="com.example.springbootjsp.controller.ChangDuaDAO" %>
-<%@ page import="com.example.springbootjsp.model.ThanhVien" %>
+<%@ page import="com.example.springbootjsp.dao.ChangDuaDAO584" %>
+<%@ page import="com.example.springbootjsp.model.ThanhVien584" %>
 
 <!DOCTYPE html>
 <html>
@@ -51,30 +51,30 @@
 </head>
 
 <body>
-<%--<%--%>
-<%--    ThanhVien tv = (ThanhVien) session.getAttribute("btc");--%>
-<%--    if (tv == null) {--%>
-<%--        response.sendRedirect("dangnhap.jsp?err=timeout");--%>
-<%--    }--%>
+<%
+//    ThanhVien tv = (ThanhVien) session.getAttribute("btc");
+//    if (tv == null) {
+//        response.sendRedirect("dangnhap.jsp?err=timeout");
+//    }
 
-<%--    ChangDuaDAO dao = new ChangDuaDAO();--%>
-<%--    ArrayList<ChangDua> listChangDua = dao.getDSChangDua();--%>
-<%--%>--%>
+    ChangDuaDAO584 dao = new ChangDuaDAO584();
+    ArrayList<ChangDua584> listChangDua584 = dao.getDSChangDua();
+    System.out.println(listChangDua584);
+%>
 
 
 <div class="cd-container">
     <h2> Chọn chặng đua </h2>
-    <form name="chonchangdua" action="gdChonDoiDua.jsp" method="post" >
+    <form name="chonchangdua" action="doidua" method="post" >
         <select class="form-select" id="floatingSelectCd" name="changdua">
             <option value="hanoi" selected>-Chọn chặng đua-</option>
-<%--            <%--%>
-<%--                for (ChangDua cd : listChangDua) {--%>
-<%--            %>--%>
-<%--            <option value="<%=cd.getId()%>"><%=cd.getThoigian()%></option>--%>
-
-<%--            <%--%>
-<%--                }--%>
-<%--            %>--%>
+            <%
+                for (ChangDua584 cd : listChangDua584) {
+            %>
+            <option value="<%=cd.getId()%>"><%=cd.getThoigian()%></option>
+            <%
+                }
+            %>
         </select>
         <button type="button" class="mt-3 btn btn-cancel" style="float:left">Quay lại</button>
         <button type="submit" class="mt-3 btn btn-primary" style="float:right">Tiếp tục</button>

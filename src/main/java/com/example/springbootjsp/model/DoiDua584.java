@@ -1,10 +1,20 @@
 package com.example.springbootjsp.model;
 
-public class DoiDua {
+public class DoiDua584 {
     int id;
     String ten;
     String hang;
     String mota;
+
+    public DoiDua584() {
+    }
+
+    public DoiDua584(int id, String ten, String hang, String mota) {
+        this.id = id;
+        this.ten = ten;
+        this.hang = hang;
+        this.mota = mota;
+    }
 
     public int getId() {
         return id;

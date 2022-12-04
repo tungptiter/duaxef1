@@ -1,4 +1,4 @@
-package com.example.springbootjsp.controller;
+package com.example.springbootjsp.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

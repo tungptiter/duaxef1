@@ -1,6 +1,6 @@
 package com.example.springbootjsp.model;
 
-public class ThanhVien {
+public class ThanhVien584 {
     int id;
     String tendangnhap;
     String matkhau;
@@ -8,10 +8,10 @@ public class ThanhVien {
     String socccd;
     String sdt;
 
-    public ThanhVien() {
+    public ThanhVien584() {
     }
 
-    public ThanhVien(int id, String tendangnhap, String matkhau, String hoten, String socccd, String sdt) {
+    public ThanhVien584(int id, String tendangnhap, String matkhau, String hoten, String socccd, String sdt) {
         this.id = id;
         this.tendangnhap = tendangnhap;
         this.matkhau = matkhau;

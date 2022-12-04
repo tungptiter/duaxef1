@@ -1,14 +1,28 @@
 package com.example.springbootjsp.model;
 
-public class TayDuaChang {
+public class TayDuaChang584 {
     int id;
     String mataydua;
     String sothuxuatphat;
     int diem;
     float thoigian;
     int sovong;
-    ChangDua changDua;
-    TayDua tayDua;
+    ChangDua584 changDua584;
+    TayDua584 tayDua584;
+
+    public TayDuaChang584() {
+    }
+
+    public TayDuaChang584(int id, String mataydua, String sothuxuatphat, int diem, float thoigian, int sovong, ChangDua584 changDua584, TayDua584 tayDua584) {
+        this.id = id;
+        this.mataydua = mataydua;
+        this.sothuxuatphat = sothuxuatphat;
+        this.diem = diem;
+        this.thoigian = thoigian;
+        this.sovong = sovong;
+        this.changDua584 = changDua584;
+        this.tayDua584 = tayDua584;
+    }
 
     public int getId() {
         return id;
@@ -58,19 +72,19 @@ public class TayDuaChang {
         this.sovong = sovong;
     }
 
-    public ChangDua getChangDua() {
-        return changDua;
+    public ChangDua584 getChangDua() {
+        return changDua584;
     }
 
-    public void setChangDua(ChangDua changDua) {
-        this.changDua = changDua;
+    public void setChangDua(ChangDua584 changDua584) {
+        this.changDua584 = changDua584;
     }
 
-    public TayDua getTayDua() {
-        return tayDua;
+    public TayDua584 getTayDua() {
+        return tayDua584;
     }
 
-    public void setTayDua(TayDua tayDua) {
-        this.tayDua = tayDua;
+    public void setTayDua(TayDua584 tayDua584) {
+        this.tayDua584 = tayDua584;
     }
 }

@@ -1,10 +1,17 @@
 package com.example.springbootjsp.model;
 
-public class GiaiDua {
+public class GiaiDua584 {
     int id;
     String ten;
     String mota;
     String nam;
+
+    public GiaiDua584(int id, String ten, String mota, String nam) {
+        this.id = id;
+        this.ten = ten;
+        this.mota = mota;
+        this.nam = nam;
+    }
 
     public int getId() {
         return id;
