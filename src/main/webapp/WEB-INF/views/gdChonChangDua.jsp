@@ -47,6 +47,11 @@
             background-color: white;
             border-color: #828A99!important;
         }
+        .link-back {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -63,22 +68,39 @@
 %>
 
 
-<div class="cd-container">
-    <h2> Chọn chặng đua </h2>
-    <form name="chonchangdua" action="doidua" method="post" >
-        <select class="form-select" id="floatingSelectCd" name="changdua">
-            <option value="hanoi" selected>-Chọn chặng đua-</option>
-            <%
-                for (ChangDua584 cd : listChangDua584) {
-            %>
-            <option value="<%=cd.getId()%>"><%=cd.getThoigian()%></option>
-            <%
-                }
-            %>
-        </select>
-        <button type="button" class="mt-3 btn btn-cancel" style="float:left">Quay lại</button>
-        <button type="submit" class="mt-3 btn btn-primary" style="float:right">Tiếp tục</button>
-    </form>
-</div>
+    <div class="cd-container">
+        <h2> Chọn chặng đua </h2>
+        <form name="chonchangdua" action="doidua" method="post" onsubmit="return validateForm()" modelAttribute="changdua">
+            <select class="form-select" id="floatingSelectCd" name="changdua">
+                <option value="" selected>-Chọn chặng đua-</option>
+                <%
+                    for (ChangDua584 cd : listChangDua584) {
+                %>
+                <option name="changdua"  value="<%=cd.getId()%>"><%=cd.getDiadiem()%></option>
+                <%
+                    }
+                %>
+            </select>
+            <button type="button" class="mt-3 btn btn-cancel" style="float:left">
+                <a class="link-back" href="btc">Quay Lại</a>
+            </button>
+            <button type="submit" class="mt-3 btn btn-primary" style="float:right" >Tiếp tục</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            // alert("Chặng đua không được để trống");
+            let cd = document.getElementByName("changdua").value;
+            console.log("test")
+            console.log(cd)
+            if(cd === ""){
+                alert("Chặng đua không được để trống");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
 </body>
 </html>

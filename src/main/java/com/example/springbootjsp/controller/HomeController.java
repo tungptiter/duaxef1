@@ -1,8 +1,10 @@
 package com.example.springbootjsp.controller;
 
 import com.example.springbootjsp.dao.ChangDuaDAO584;
-import com.example.springbootjsp.model.ChangDua584;
-import com.example.springbootjsp.model.Staff;
+import com.example.springbootjsp.dao.DoiDuaDAO584;
+import com.example.springbootjsp.dao.TayDuaChang584DAO;
+import com.example.springbootjsp.dao.TayDuaDAO584;
+import com.example.springbootjsp.model.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,19 +44,10 @@ public class HomeController {
     }
 
 
-    @RequestMapping("taydua")
-    public String tayDua() {
-        return "gdChonTayDua";
-    }
 
 
     @RequestMapping("doDangNhap")
     public String dangnhap() {
-        return "gdChinhBTC";
-    }
-
-    @RequestMapping("doLuu")
-    public String doLuu() {
         return "gdChinhBTC";
     }
 
@@ -98,6 +91,23 @@ public class HomeController {
         return "form";
     }
 
+    @RequestMapping("taydua")
+    public String tayDua(Model model) {
+//        DoiDua584 doiDua584 = new DoiDua584();
+//        model.getAttribute("doidua");
+//        System.out.println(model.getAttribute("doidua"));
+//
+//        DoiDuaDAO584 daodd = new DoiDuaDAO584();
+//
+//        DoiDua584 doiDua584 =  daodd.getIdDoiDuaTheoTen("vinfastf88");
+//
+//        TayDuaDAO584 dao = new TayDuaDAO584();
+//        ArrayList<TayDua584> listTayDua= dao.getDSTayDuaTheoDoiDua(doiDua584.getId());
+//        model.addAttribute("taydua", listTayDua);
+        return "gdChonTayDua";
+    }
+
+
     @GetMapping("staff/dkythidau")
     public String dky(Model model) {
         Staff staff = new Staff();
@@ -111,6 +121,25 @@ public class HomeController {
         model.addAttribute("staffs", staffList);
 
         return "form";
+    }
+
+    @RequestMapping("doLuu")
+    public String doLuu(@ModelAttribute("taydua") TayDua584 td, @ModelAttribute("changdua") ChangDua584 cd) {
+//    public String doLuu(Model model) {
+//        System.out.println("test");
+//        TayDua584 td = new TayDua584();
+//        model.getAttribute("taydua", td);
+
+//        System.out.println(td.getId());
+//        System.out.println(td.getTen());
+//        System.out.println(cd.getId());
+//        System.out.println(cd.getDiadiem());
+        System.out.println("end tesst");
+//        TayDuaChang584 tdc = new TayDuaChang584();
+//
+//        TayDuaChang584DAO dao = new TayDuaChang584DAO();
+
+        return "gdChinhBTC";
     }
 
     @PostMapping("staff/save")

@@ -1,6 +1,7 @@
 package com.example.springbootjsp.dao;
 
 import com.example.springbootjsp.model.ChangDua584;
+import com.example.springbootjsp.model.GiaiDua584;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,6 +31,20 @@ public class ChangDuaDAO584 extends DAO {
                 int idGiaiDua = rs.getInt(6);
 
                 listChangDua584.add(cd);
+
+//                cd.setTen(result.getString("ten"));
+
+//                cd.setSovongdua(result.getFloat("sovongdua"));
+//                cd.setThoigian(result.getInt("thoigian"));
+//                cd.setMota(result.getString("mota"));
+//
+//                DiaDiem dd = new DiaDiem();
+//                dd.setId(result.getInt("tblDiaDiemid"));
+//                cd.setDiaDiem(dd);
+//
+//                GiaiDua584 mg = new GiaiDua584();
+//                mg.setId(rs.getInt("tblMuaGiaiid"));
+//                cd.set(mg);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ChangDuaDAO584.class.getName()).log(Level.SEVERE, null, ex);

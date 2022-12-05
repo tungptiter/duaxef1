@@ -52,4 +52,24 @@ public class TayDuaDAO584 extends DAO {
         }
         return listChangDua;
     }
+
+    public ArrayList<TayDua584> getDSTayDuaTheoDoiDua(int idDoiDua) {
+        ArrayList<TayDua584> listChangDua = new ArrayList();
+
+        String sql = "SELECT * FROM `tbltaydua584`  WHERE tblDoiDua584id = ?";
+        try {
+            PreparedStatement stm = con.prepareStatement(sql);
+            stm.setInt(1, idDoiDua);
+
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                TayDua584 td = new TayDua584( rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                listChangDua.add(td);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TayDuaDAO584.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        return listChangDua;
+    }
 }

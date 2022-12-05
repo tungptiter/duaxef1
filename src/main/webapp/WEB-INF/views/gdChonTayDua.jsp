@@ -48,6 +48,11 @@
             background-color: white;
             border-color: #828A99!important;
         }
+        .link-back {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -58,8 +63,15 @@
 //        response.sendRedirect("dangnhap.jsp?err=timeout");
 //    }
 
+    int  idDoiDua = Integer.parseInt(request.getParameter("doidua"));
+//    idDoiDua = 1;
     TayDuaDAO584 dao = new TayDuaDAO584();
-    ArrayList<TayDua584> listTayDua= dao.getDSTayDua();
+    ArrayList<TayDua584> listTayDua= dao.getDSTayDuaTheoDoiDua(idDoiDua);
+
+//    TayDuaDAO584 dao = new TayDuaDAO584();
+//    ArrayList<TayDua584> listTayDua= dao.getDSTayDua();
+
+
 %>
 
 
@@ -67,7 +79,7 @@
     <h2> Chọn tay đua </h2>
     <h4> Chặng đua: </h4>
     <h4> Đội đua: </h4>
-    <form name="chontaydua" action="doLuu" method="post" >
+    <form name="chontaydua" action="doLuu" method="post"  modelAttribute="taydua">
         <select class="form-select" id="floatingSelectTD" name="taydua">
             <option value="nguyen tung" selected>-Chọn tay đua-</option>
                         <%
@@ -79,7 +91,9 @@
                             }
                         %>
         </select>
-        <button type="button" class="mt-3 btn btn-cancel" style="float:left">Quay lại</button>
+        <button type="button" class="mt-3 btn btn-cancel" style="float:left">
+            <a class="link-back" href="doidua">Quay Lại</a>
+        </button>
         <button type="submit" class="mt-3 btn btn-primary" style="float:right">Lưu</button>
     </form>
 </div>

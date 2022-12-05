@@ -49,6 +49,11 @@
             background-color: white;
             border-color: #828A99!important;
         }
+        .link-back {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -67,9 +72,9 @@
 <div class="dd-container">
     <h2> Chọn đội đua </h2>
     <h5> Chặng đua: </h5>
-    <form name="chondoidua" action="taydua" method="post" >
+    <form name="chondoidua" action="taydua" method="post"  modelAttribute="doidua">
         <select class="form-select" id="floatingSelectDd" name="doidua">
-            <option value="ptit" selected>-Chọn đội đua-</option>
+            <option value="ptit" id="dd" selected>-Chọn đội đua-</option>
                         <%
                             for (DoiDua584 dd : listDoiDua584) {
                         %>
@@ -79,9 +84,47 @@
                             }
                         %>
         </select>
-        <button type="button" class="mt-3 btn btn-cancel" style="float:left">Quay lại</button>
+        <button type="button" class="mt-3 btn btn-cancel" style="float:left">
+            <a class="link-back" href="changdua">Quay Lại</a>
+        </button>
         <button type="submit" class="mt-3 btn btn-primary" style="float:right">Tiếp tục</button>
     </form>
 </div>
+
+
+<script>
+    // function addRow() {
+    //
+    //     var dd = document.getElementById("dd");
+    //
+    //     var a = document.createElement("a");
+    //
+    //     var x = "/taydua/" + dd;
+    //     a.setAttribute('href', x);
+    //     a.click()
+    //
+    //     // for (i = 0; i < rows.length; i++) {
+    //     //     var currentRow = table.rows[i];
+    //     //
+    //     //     var createClickHandler = function (row) {
+    //     //         return function () {
+    //     //
+    //     //             var cell = row.getElementsByTagName("td")[0];
+    //     //             var id = cell.innerHTML;
+    //     //             // alert("id"+id);
+    //     //             var a = document.createElement("a");
+    //     //
+    //     //             var x = "/gdChiTietCapDau/" + id;
+    //     //             a.setAttribute('href', x);
+    //     //             a.click()
+    //     //         };
+    //     //     };
+    //     //     currentRow.onclick = createClickHandler(currentRow);
+    //     // }
+    // }
+    //
+    // window.onload = addRow();
+</script>
+
 </body>
 </html>

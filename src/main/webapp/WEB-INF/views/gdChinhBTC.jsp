@@ -69,7 +69,7 @@
 
         
         <a class="link-move" href="changdua">Đăng ký thi đấu</a> <br>
-        <a class="link-move" href="dsthidau">Đăng ký thi đấu</a> <br>
+        <a class="link-move" href="dsthidau">Danh sách thi đấu</a> <br>
         <a class="link-move" href="#">Cập nhật kết quả chặng đua</a> <br>
         <a class="link-move" href="#">Xem bảng xếp hạng</a> <br>
         <a class="link-move" href="#">Quản lý giải đua</a> <br>
