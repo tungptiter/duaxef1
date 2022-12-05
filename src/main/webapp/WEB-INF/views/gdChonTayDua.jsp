@@ -70,10 +70,7 @@
     int  idChangDua = Integer.parseInt(request.getParameter("idChangDua"));
     ChangDuaDAO584 daoCd = new ChangDuaDAO584();
     String diadiem = daoCd.getChangDuaTheoId(idChangDua);
-
-
 %>
-
 
 <div class="td-container">
     <h2> Chọn Tay Đua </h2>

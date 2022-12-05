@@ -13,7 +13,7 @@
 </head>
 <body>
 <%
-    int  idChangDua = Integer.parseInt(request.getParameter("changdua"));
+    int  idChangDua = Integer.parseInt(request.getParameter("idChangDua"));
     int  idTayDua = Integer.parseInt(request.getParameter("taydua"));
 
 
@@ -22,21 +22,22 @@
     boolean check = dao.luuDangKy(tdc);
 
     if (check) {
-%>
-<script type="text/javascript">
-    confirm("Lưu kết quả thành công!");
-    alert("ok con de");
-</script>
-<%
-    //            response.sendRedirect("gdChinhBTC.jsp");
-} else {
-%>
-<script type="text/javascript">
-    alert("Lỗi lưu kết quả!");
-    history.back();
-</script>
-<%
+        %>
+        <script type="text/javascript">
+            confirm("Lưu kết quả thành công!");
+        </script>
+        <%
+            //            response.sendRedirect("gdChinhBTC.jsp");
+    } else {
+        %>
+        <script type="text/javascript">
+            alert("Lỗi lưu đăng ký! Vui lòng đăng ký lại");
+            history.back();
+        </script>
+        <%
     }
 %>
+
+<h2> tt  okkkk</h2>
 </body>
 </html>
