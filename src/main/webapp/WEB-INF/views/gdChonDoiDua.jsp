@@ -4,6 +4,7 @@
 %>
 <%@ page import="com.example.springbootjsp.dao.ChangDuaDAO584" %>
 <%@ page import="com.example.springbootjsp.model.ThanhVien584" %>
+<%@ page isELIgnored="false" %><%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -59,10 +60,9 @@
 
 <body>
 <%
-//    ThanhVien tv = (ThanhVien) session.getAttribute("btc");
-//    if (tv == null) {
-//        response.sendRedirect("dangnhap.jsp?err=timeout");
-//    }
+    int  idChangDua = Integer.parseInt(request.getParameter("changdua"));
+    ChangDuaDAO584 daoCd = new ChangDuaDAO584();
+    String diadiem = daoCd.getChangDuaTheoId(idChangDua);
 
     DoiDuaDAO584 dao = new DoiDuaDAO584();
     ArrayList<DoiDua584> listDoiDua584 = dao.getDSDoiDua();
@@ -70,20 +70,20 @@
 
 
 <div class="dd-container">
-    <h2> Chọn đội đua </h2>
-    <h5> Chặng đua: </h5>
+    <h2> Chọn Đội Đua </h2>
+    <h5> Chặng đua: <%=diadiem%>  </h5>
     <form name="chondoidua" action="taydua" method="post"  modelAttribute="doidua">
         <select class="form-select" id="floatingSelectDd" name="doidua">
             <option value="ptit" id="dd" selected>-Chọn đội đua-</option>
-                        <%
-                            for (DoiDua584 dd : listDoiDua584) {
-                        %>
-                        <option value="<%=dd.getId()%>"><%=dd.getTen()%></option>
-
-                        <%
-                            }
-                        %>
+            <%
+                for (DoiDua584 dd : listDoiDua584) {
+                    %>
+                    <option value="<%=dd.getId()%>"><%=dd.getTen()%></option>
+                    <%
+                }
+            %>
         </select>
+        <input value="<%=idChangDua%>" hidden name="idChangDua">
         <button type="button" class="mt-3 btn btn-cancel" style="float:left">
             <a class="link-back" href="changdua">Quay Lại</a>
         </button>

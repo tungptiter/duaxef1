@@ -13,27 +13,19 @@
 </head>
 <body>
 <%
-    String[] listThoigianvedich = request.getParameterValues("thoigianvedich");
-    String[] listSovongduahoanthanh = request.getParameterValues("sovongduahoanthanh");
-    String[] listDktdId = request.getParameterValues("dktdId");
+    int  idChangDua = Integer.parseInt(request.getParameter("changdua"));
+    int  idTayDua = Integer.parseInt(request.getParameter("taydua"));
 
-    ArrayList<TayDuaChang584> list = new ArrayList<>();
-    for (int i = 0; i < listDktdId.length; i++) {
-        TayDuaChang584 dk = new TayDuaChang584();
-        dk.setId(Integer.parseInt(listDktdId[i]));
-        dk.setSovongduahoanthanh(Float.parseFloat(listSovongduahoanthanh[i]));
-        dk.setThoigianvedich(Integer.parseInt(listThoigianvedich[i]));
 
-        list.add(dk);
-    }
-
-    TayDuaChang584 dao = new DangKiThiDauDAO();
-    boolean check = dao.luuKetQuaThiDau(list);
+    TayDuaChang584 tdc = new TayDuaChang584(4,"4","s4",0,0,0, idChangDua, idTayDua);
+    TayDuaChang584DAO dao = new TayDuaChang584DAO();
+    boolean check = dao.luuDangKy(tdc);
 
     if (check) {
 %>
 <script type="text/javascript">
     confirm("Lưu kết quả thành công!");
+    alert("ok con de");
 </script>
 <%
     //            response.sendRedirect("gdChinhBTC.jsp");

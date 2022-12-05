@@ -52,4 +52,23 @@ public class ChangDuaDAO584 extends DAO {
         }
         return listChangDua584;
     }
+
+    public String getChangDuaTheoId(int idCd) {
+        String diadiemCd = "";
+        ChangDua584 cd = new ChangDua584();
+        String sql = "SELECT * FROM `tblchangdua584` WHERE id = ?";
+        try {
+            PreparedStatement stm = con.prepareStatement(sql);
+            stm.setInt(1, idCd);
+
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                diadiemCd = rs.getString(3);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ChangDuaDAO584.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        return diadiemCd;
+    }
 }

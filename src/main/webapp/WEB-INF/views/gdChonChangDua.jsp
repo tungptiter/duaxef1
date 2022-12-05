@@ -4,7 +4,7 @@
 %>
 <%@ page import="com.example.springbootjsp.dao.ChangDuaDAO584" %>
 <%@ page import="com.example.springbootjsp.model.ThanhVien584" %>
-
+<%@ page isELIgnored="false" %><%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,11 +57,6 @@
 
 <body>
 <%
-//    ThanhVien tv = (ThanhVien) session.getAttribute("btc");
-//    if (tv == null) {
-//        response.sendRedirect("dangnhap.jsp?err=timeout");
-//    }
-
     ChangDuaDAO584 dao = new ChangDuaDAO584();
     ArrayList<ChangDua584> listChangDua584 = dao.getDSChangDua();
     System.out.println(listChangDua584);
@@ -69,17 +64,17 @@
 
 
     <div class="cd-container">
-        <h2> Chọn chặng đua </h2>
-        <form name="chonchangdua" action="doidua" method="post" onsubmit="return validateForm()" modelAttribute="changdua">
-            <select class="form-select" id="floatingSelectCd" name="changdua">
-                <option value="" selected>-Chọn chặng đua-</option>
-                <%
-                    for (ChangDua584 cd : listChangDua584) {
-                %>
-                <option name="changdua"  value="<%=cd.getId()%>"><%=cd.getDiadiem()%></option>
-                <%
-                    }
-                %>
+        <h2> Chọn Chặng Đua </h2>
+        <form name="chonchangdua" action="doidua" method="post" onsubmit="return validateForm()">
+                <select class="form-select" id="floatingSelectCd" name="changdua">
+                    <option value="" selected>-Chọn chặng đua-</option>
+                    <%
+                        for (ChangDua584 cd : listChangDua584) {
+                            %>
+                            <option value="<%=cd.getId()%>"><%=cd.getDiadiem()%></option>
+                            <%
+                        }
+                    %>
             </select>
             <button type="button" class="mt-3 btn btn-cancel" style="float:left">
                 <a class="link-back" href="btc">Quay Lại</a>

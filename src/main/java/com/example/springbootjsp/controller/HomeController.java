@@ -17,6 +17,8 @@ import java.util.List;
 
 @Controller
 public class HomeController {
+    int idCd = 1;
+    int idDd = 1;
 
     @RequestMapping("home")
     public String index() {
@@ -31,20 +33,17 @@ public class HomeController {
 
     @RequestMapping("changdua")
     public String changDua() {
-
-//        ChangDuaDAO584 changDua584 = new ChangDuaDAO584();
-//        List<ChangDua584> listChangDua584 = changDua584.getDSChangDua();
-
         return "gdChonChangDua";
     }
 
     @RequestMapping("doidua")
-    public String doiDua() {
+    public String doiDua(@ModelAttribute("changdua") ChangDua584 cd) {
+        cd.setDiadiem(cd.getDiadiem());
+        idCd = 2;
+        System.out.println(idCd);
+        System.out.println(cd.getDiadiem());
         return "gdChonDoiDua";
     }
-
-
-
 
     @RequestMapping("doDangNhap")
     public String dangnhap() {
@@ -56,21 +55,14 @@ public class HomeController {
         return "gdDsThiDau";
     }
 
-//    @RequestMapping("gdChonChangDua.jsp")
-//    public String testCd() {
-//        return "gdChonChangDua";
-//    }
-
     @RequestMapping("dangnhap")
     public String dangNhap(Model model) {
         Staff staff = new Staff();
         staff.setFullname("Thin");
         staff.setId("ABC");
         model.addAttribute("staff", staff);
-
         List<Staff> staffList = new ArrayList<>();
         staffList.add(staff);
-
         model.addAttribute("staffs", staffList);
 
         return "gdDangNhap";
@@ -93,7 +85,6 @@ public class HomeController {
 
     @RequestMapping("taydua")
     public String tayDua(Model model) {
-//        DoiDua584 doiDua584 = new DoiDua584();
 //        model.getAttribute("doidua");
 //        System.out.println(model.getAttribute("doidua"));
 //
@@ -104,6 +95,7 @@ public class HomeController {
 //        TayDuaDAO584 dao = new TayDuaDAO584();
 //        ArrayList<TayDua584> listTayDua= dao.getDSTayDuaTheoDoiDua(doiDua584.getId());
 //        model.addAttribute("taydua", listTayDua);
+
         return "gdChonTayDua";
     }
 
@@ -126,12 +118,10 @@ public class HomeController {
     @RequestMapping("doLuu")
     public String doLuu(@ModelAttribute("taydua") TayDua584 td, @ModelAttribute("changdua") ChangDua584 cd) {
 //    public String doLuu(Model model) {
-//        System.out.println("test");
-//        TayDua584 td = new TayDua584();
-//        model.getAttribute("taydua", td);
+        System.out.println("test");
 
 //        System.out.println(td.getId());
-//        System.out.println(td.getTen());
+        System.out.println(td.getTen());
 //        System.out.println(cd.getId());
 //        System.out.println(cd.getDiadiem());
         System.out.println("end tesst");
@@ -139,7 +129,7 @@ public class HomeController {
 //
 //        TayDuaChang584DAO dao = new TayDuaChang584DAO();
 
-        return "gdChinhBTC";
+        return "doLuu";
     }
 
     @PostMapping("staff/save")

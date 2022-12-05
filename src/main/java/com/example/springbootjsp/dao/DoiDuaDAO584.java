@@ -72,4 +72,22 @@ public class DoiDuaDAO584 extends DAO {
         }
         return doidua;
     }
+
+    public String getTenDoiDuaTheoId(int idDd) {
+        String tenDoiDua = "";
+
+        String sql = "SELECT * FROM `tbldoidua584` WHERE id = ?";
+        try {
+            PreparedStatement stm = con.prepareStatement(sql);
+            stm.setInt(1, idDd);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                tenDoiDua = rs.getString(2);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DoiDuaDAO584.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        return tenDoiDua;
+    }
 }

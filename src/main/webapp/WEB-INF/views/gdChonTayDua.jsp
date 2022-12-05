@@ -5,6 +5,9 @@
 <%@ page import="com.example.springbootjsp.dao.ChangDuaDAO584" %>
 <%@ page import="com.example.springbootjsp.model.ThanhVien584" %>
 <%@ page import="com.example.springbootjsp.dao.TayDuaDAO584" %>
+<%@ page import="com.example.springbootjsp.dao.DoiDuaDAO584" %>
+<%@ page isELIgnored="false" %><%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <!DOCTYPE html>
 <html>
@@ -42,7 +45,7 @@
 
         .form-select {
             min-width: 250px;
-            height: 50px;
+            height: 150px;
         }
         .btn-cancel {
             background-color: white;
@@ -58,39 +61,40 @@
 
 <body>
 <%
-//    ThanhVien tv = (ThanhVien) session.getAttribute("btc");
-//    if (tv == null) {
-//        response.sendRedirect("dangnhap.jsp?err=timeout");
-//    }
-
     int  idDoiDua = Integer.parseInt(request.getParameter("doidua"));
-//    idDoiDua = 1;
+    DoiDuaDAO584 daodd = new DoiDuaDAO584();
+    String tenDd = daodd.getTenDoiDuaTheoId(idDoiDua);
     TayDuaDAO584 dao = new TayDuaDAO584();
     ArrayList<TayDua584> listTayDua= dao.getDSTayDuaTheoDoiDua(idDoiDua);
 
-//    TayDuaDAO584 dao = new TayDuaDAO584();
-//    ArrayList<TayDua584> listTayDua= dao.getDSTayDua();
+    int  idChangDua = Integer.parseInt(request.getParameter("idChangDua"));
+    ChangDuaDAO584 daoCd = new ChangDuaDAO584();
+    String diadiem = daoCd.getChangDuaTheoId(idChangDua);
 
 
 %>
 
 
 <div class="td-container">
-    <h2> Chọn tay đua </h2>
-    <h4> Chặng đua: </h4>
-    <h4> Đội đua: </h4>
+    <h2> Chọn Tay Đua </h2>
+    <h4> Chặng đua: <%=diadiem%></h4>
+    <h4> Đội đua: <%=tenDd%> </h4>
     <form name="chontaydua" action="doLuu" method="post"  modelAttribute="taydua">
-        <select class="form-select" id="floatingSelectTD" name="taydua">
+        <select multiple size="2" class="form-select" id="floatingSelectTD" name="taydua">
             <option value="nguyen tung" selected>-Chọn tay đua-</option>
-                        <%
-                            for (TayDua584 td : listTayDua) {
-                        %>
-                        <option value="<%=td.getId()%>"><%=td.getTen()%></option>
+            <%
+                for (TayDua584 td : listTayDua) {
+                    %>
+                    <option value="<%=td.getId()%>"><%=td.getTen()%></option>
 
-                        <%
-                            }
-                        %>
+                    <%
+                }
+            %>
         </select>
+
+        <input value="<%=idChangDua%>" hidden name="idChangDua">
+        <input value="<%=idDoiDua%>" hidden name="idDoiDua">
+
         <button type="button" class="mt-3 btn btn-cancel" style="float:left">
             <a class="link-back" href="doidua">Quay Lại</a>
         </button>
