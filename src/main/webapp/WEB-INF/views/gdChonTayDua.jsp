@@ -44,7 +44,7 @@
         }
 
         .form-select {
-            min-width: 250px;
+            min-width: 200px;
             height: 150px;
         }
         .btn-cancel {
@@ -56,38 +56,68 @@
             text-decoration: none;
             cursor: pointer;
         }
+        .info {
+            margin-left: -2.5rem;
+        }
     </style>
 </head>
 
 <body>
 <%
-    int  idDoiDua = Integer.parseInt(request.getParameter("doidua"));
+//    int  idDoiDua = Integer.parseInt(request.getParameter("doidua"));
+
+    int  idDoiDua = 1;
+    if(request.getParameter("doidua") != null) {
+        idDoiDua = Integer.parseInt(request.getParameter("doidua"));
+    }
+
     DoiDuaDAO584 daodd = new DoiDuaDAO584();
     String tenDd = daodd.getTenDoiDuaTheoId(idDoiDua);
     TayDuaDAO584 dao = new TayDuaDAO584();
     ArrayList<TayDua584> listTayDua= dao.getDSTayDuaTheoDoiDua(idDoiDua);
 
-    int  idChangDua = Integer.parseInt(request.getParameter("idChangDua"));
+    int  idChangDua = 1;
+    if(request.getParameter("idChangDua") != null) {
+        idChangDua = Integer.parseInt(request.getParameter("idChangDua"));
+    }
+
     ChangDuaDAO584 daoCd = new ChangDuaDAO584();
     String diadiem = daoCd.getChangDuaTheoId(idChangDua);
 %>
 
 <div class="td-container">
     <h2> Chọn Tay Đua </h2>
-    <h4> Chặng đua: <%=diadiem%></h4>
-    <h4> Đội đua: <%=tenDd%> </h4>
-    <form name="chontaydua" action="doLuu" method="post"  modelAttribute="taydua">
-        <select multiple size="2" class="form-select" id="floatingSelectTD" name="taydua">
-            <option value="nguyen tung" selected>-Chọn tay đua-</option>
-            <%
-                for (TayDua584 td : listTayDua) {
+    <div class="info">
+        <h5> Chặng đua: <%=diadiem%></h5>
+        <h5> Đội đua: <%=tenDd%> </h5>
+    </div>
+    <form class="mt-3" name="chontaydua" action="doLuu" method="post"  modelAttribute="taydua">
+        <div class="row">
+            <div class="col-6">
+                <h5>Tay đua 1</h5>
+                <select onclick="test()" multiple="true" class="form-select" id="floatingSelectTD" name="taydua">
+                    <%
+                        for (TayDua584 td : listTayDua) {
+                            %>
+                            <option value="<%=td.getId()%>"><%=td.getTen()%></option>
+                            <%
+                        }
+                    %>
+                </select>
+            </div>
+            <div class="col-6">
+                <h5>Tay đua 2</h5>
+                <select onclick="test()" multiple="true" class="form-select col-6" id="floatingSelectTD2" name="taydua2">
+                    <%
+                        for (TayDua584 td : listTayDua) {
                     %>
                     <option value="<%=td.getId()%>"><%=td.getTen()%></option>
-
                     <%
-                }
-            %>
-        </select>
+                        }
+                    %>
+                </select>
+            </div>
+        </div>
 
         <input value="<%=idChangDua%>" hidden name="idChangDua">
         <input value="<%=idDoiDua%>" hidden name="idDoiDua">
@@ -98,5 +128,17 @@
         <button type="submit" class="mt-3 btn btn-primary" style="float:right">Lưu</button>
     </form>
 </div>
+
+<script>
+    function test() {
+        console.log("a iu e");
+        let dd = document.getElementsByClassName("form-select").value();
+        if(dd === ""){
+            alert("Vui lòng chọn đội đua");
+            return false;
+        }
+        return true;
+    }
+</script>
 </body>
 </html>

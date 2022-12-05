@@ -65,16 +65,16 @@
 
     <div class="cd-container">
         <h2> Chọn Chặng Đua </h2>
-        <form name="chonchangdua" action="doidua" method="post" onsubmit="return validateForm()">
-                <select class="form-select" id="floatingSelectCd" name="changdua">
-                    <option value="" selected>-Chọn chặng đua-</option>
-                    <%
-                        for (ChangDua584 cd : listChangDua584) {
-                            %>
-                            <option value="<%=cd.getId()%>"><%=cd.getDiadiem()%></option>
-                            <%
-                        }
-                    %>
+        <form class="mt-3" name="chonchangdua" action="doidua" method="post" onsubmit="return validateForm()">
+            <select class="form-select" id="floatingSelectCd" name="changdua">
+                <option value="" selected>Chọn chặng đua</option>
+                <%
+                    for (ChangDua584 cd : listChangDua584) {
+                        %>
+                        <option value="<%=cd.getId()%>"><%=cd.getDiadiem()%></option>
+                        <%
+                    }
+                %>
             </select>
             <button type="button" class="mt-3 btn btn-cancel" style="float:left">
                 <a class="link-back" href="btc">Quay Lại</a>
@@ -85,12 +85,11 @@
 
     <script>
         function validateForm() {
-            // alert("Chặng đua không được để trống");
-            let cd = document.getElementByName("changdua").value;
+            let cd = document.getElementsByClassName("form-select").value();
             console.log("test")
             console.log(cd)
             if(cd === ""){
-                alert("Chặng đua không được để trống");
+                alert("Vui lòng chọn chặng đua");
                 return false;
             }
             return true;

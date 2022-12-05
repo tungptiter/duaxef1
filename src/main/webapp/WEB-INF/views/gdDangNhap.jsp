@@ -51,7 +51,7 @@
         %>
         <div class="login-container">
             <h3 class="login-title ">Đăng nhập</h3>
-            <form class="login-input-container " name="dangnhap" action="doDangNhap" method="post">
+            <form class="login-input-container " name="dangnhap" action="btc" method="post">
                 <input type="text" name="username" id="username" required placeholder="Nhập tên tài khoản"/><br>
                 <input type="password" name="password" id="password" placeholder="Nhập mật khẩu" required class="mt-2"/><br>
                 <button type="submit" class="login-btn btn btn-primary">Đăng nhập</button>

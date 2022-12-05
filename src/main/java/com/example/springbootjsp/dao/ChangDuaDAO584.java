@@ -11,11 +11,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ChangDuaDAO584 extends DAO {
-
     public ChangDuaDAO584() {
         super();
     }
-
     public ArrayList<ChangDua584> getDSChangDua() {
         ArrayList<ChangDua584> listChangDua584 = new ArrayList();
 

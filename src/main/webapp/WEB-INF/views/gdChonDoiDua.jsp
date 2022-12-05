@@ -60,7 +60,11 @@
 
 <body>
 <%
-    int  idChangDua = Integer.parseInt(request.getParameter("changdua"));
+    int  idChangDua = 1;
+    if(request.getParameter("changdua") != null || request.getParameter("changdua") != "") {
+        idChangDua = Integer.parseInt(request.getParameter("changdua"));
+    }
+
     ChangDuaDAO584 daoCd = new ChangDuaDAO584();
     String diadiem = daoCd.getChangDuaTheoId(idChangDua);
 
@@ -71,10 +75,12 @@
 
 <div class="dd-container">
     <h2> Chọn Đội Đua </h2>
-    <h5> Chặng đua: <%=diadiem%>  </h5>
-    <form name="chondoidua" action="taydua" method="post"  modelAttribute="doidua">
+    <div class="info">
+        <h5> Chặng đua: <%=diadiem%>  </h5>
+    </div>
+    <form class="mt-3" name="chondoidua" action="taydua" method="post"  modelAttribute="doidua">
         <select class="form-select" id="floatingSelectDd" name="doidua">
-            <option value="ptit" id="dd" selected>-Chọn đội đua-</option>
+            <option value="ptit" id="dd" selected>Chọn đội đua</option>
             <%
                 for (DoiDua584 dd : listDoiDua584) {
                     %>
@@ -93,37 +99,14 @@
 
 
 <script>
-    // function addRow() {
-    //
-    //     var dd = document.getElementById("dd");
-    //
-    //     var a = document.createElement("a");
-    //
-    //     var x = "/taydua/" + dd;
-    //     a.setAttribute('href', x);
-    //     a.click()
-    //
-    //     // for (i = 0; i < rows.length; i++) {
-    //     //     var currentRow = table.rows[i];
-    //     //
-    //     //     var createClickHandler = function (row) {
-    //     //         return function () {
-    //     //
-    //     //             var cell = row.getElementsByTagName("td")[0];
-    //     //             var id = cell.innerHTML;
-    //     //             // alert("id"+id);
-    //     //             var a = document.createElement("a");
-    //     //
-    //     //             var x = "/gdChiTietCapDau/" + id;
-    //     //             a.setAttribute('href', x);
-    //     //             a.click()
-    //     //         };
-    //     //     };
-    //     //     currentRow.onclick = createClickHandler(currentRow);
-    //     // }
-    // }
-    //
-    // window.onload = addRow();
+    function validateForm() {
+        let dd = document.getElementByName("doidua").value;
+        if(dd === ""){
+            alert("Vui lòng chọn đội đua");
+            return false;
+        }
+        return true;
+    }
 </script>
 
 </body>
