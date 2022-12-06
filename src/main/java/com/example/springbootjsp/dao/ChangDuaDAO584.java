@@ -16,33 +16,14 @@ public class ChangDuaDAO584 extends DAO {
     }
     public ArrayList<ChangDua584> getDSChangDua() {
         ArrayList<ChangDua584> listChangDua584 = new ArrayList();
-
         String sql = "SELECT * FROM `tblchangdua584`";
         try {
             PreparedStatement stm = con.prepareStatement(sql);
 
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-//                ChangDua584 cd = new ChangDua584();
-//                cd.setId(result.getInt("id"));
-                ChangDua584 cd = new ChangDua584( rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
-                int idGiaiDua = rs.getInt(6);
-
+                ChangDua584 cd = new ChangDua584( rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getInt(6));
                 listChangDua584.add(cd);
-
-//                cd.setTen(result.getString("ten"));
-
-//                cd.setSovongdua(result.getFloat("sovongdua"));
-//                cd.setThoigian(result.getInt("thoigian"));
-//                cd.setMota(result.getString("mota"));
-//
-//                DiaDiem dd = new DiaDiem();
-//                dd.setId(result.getInt("tblDiaDiemid"));
-//                cd.setDiaDiem(dd);
-//
-//                GiaiDua584 mg = new GiaiDua584();
-//                mg.setId(rs.getInt("tblMuaGiaiid"));
-//                cd.set(mg);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ChangDuaDAO584.class.getName()).log(Level.SEVERE, null, ex);

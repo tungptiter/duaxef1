@@ -14,24 +14,26 @@ public class ThanhVienDAO584 extends DAO {
         super();
     }
 
-    public boolean dangNhap(ThanhVien584 tv) {
+    public String dangNhap(String username, String password) {
+        System.out.println(username);
+        System.out.println(password);
         String sql = "SELECT * FROM `tblthanhvien584` WHERE tendangnhap = ? AND matkhau = ?";
         try {
             PreparedStatement stm = con.prepareStatement(sql);
-            stm.setString(1, tv.getTendangnhap());
-            stm.setString(2, tv.getMatkhau());
+            stm.setString(1, username);
+            stm.setString(2, password);
 
             ResultSet result = stm.executeQuery();
             if (result.next()) {
-                tv.setId(result.getInt("id"));
-//                tv.setChucvu(result.getString("chucvu"));
-                tv.setHoten(result.getString("hoten"));
-                return true;
+                return result.getString("hoten");
+//                return true;
             }
-            return false;
+            return "";
+//            return false;
         } catch (SQLException ex) {
             Logger.getLogger(ThanhVienDAO584.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
+            return "";
+//            return false;
         }
     }
 }

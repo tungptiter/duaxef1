@@ -20,6 +20,8 @@ public class ChangDua584 {
     String thoigian;
     String mota;
 
+    int tblGiaiDua584id;
+
     public ChangDua584() {
     }
 
@@ -33,6 +35,15 @@ public class ChangDua584 {
         this.diadiem = diadiem;
         this.thoigian = thoigian;
         this.mota = mota;
+    }
+
+    public ChangDua584(int id, String sovongdua, String diadiem, String thoigian, String mota, int tblGiaiDua584id) {
+        this.id = id;
+        this.sovongdua = sovongdua;
+        this.diadiem = diadiem;
+        this.thoigian = thoigian;
+        this.mota = mota;
+        this.tblGiaiDua584id = tblGiaiDua584id;
     }
 
     public void setId(int id) {
@@ -69,5 +80,13 @@ public class ChangDua584 {
 
     public void setMota(String mota) {
         this.mota = mota;
+    }
+
+    public int getTblGiaiDua584id() {
+        return tblGiaiDua584id;
+    }
+
+    public void setTblGiaiDua584id(int tblGiaiDua584id) {
+        this.tblGiaiDua584id = tblGiaiDua584id;
     }
 }
