@@ -15,8 +15,6 @@ public class ThanhVienDAO584 extends DAO {
     }
 
     public String dangNhap(String username, String password) {
-        System.out.println(username);
-        System.out.println(password);
         String sql = "SELECT * FROM `tblthanhvien584` WHERE tendangnhap = ? AND matkhau = ?";
         try {
             PreparedStatement stm = con.prepareStatement(sql);

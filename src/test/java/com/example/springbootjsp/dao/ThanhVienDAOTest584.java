@@ -21,7 +21,7 @@ public class ThanhVienDAOTest584 {
     public void testGetDSChangDua() {
 
         ThanhVienDAO584 dao = new ThanhVienDAO584();
-        String tendangnhap = dao.dangNhap("admin", "2");
+        String tendangnhap = dao.dangNhap("admin", "admin");
         assertEquals(tendangnhap, "thanh");
     }
 }

@@ -1,7 +1,9 @@
 package com.example.springbootjsp.dao;
 
+import com.example.springbootjsp.model.DoiDua584;
 import com.example.springbootjsp.model.TayDuaChang584;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,11 +13,25 @@ public class TayDuaChang584DAO extends DAO {
     public TayDuaChang584DAO() {
         super();
     }
-    public boolean luuDangKy(TayDuaChang584 tdc) {
+    public String luuDangKy(TayDuaChang584 tdc) {
         if (tdc == null) {
-            return false;
+            return "Lỗi đăng ký tay đua";
         }
-        boolean check = false;
+
+        String sql = "SELECT * FROM `tbltayduachang584` WHERE tblChangDua584id = ?, tblTayDua584id = ?";
+        try {
+            PreparedStatement stm = con.prepareStatement(sql);
+            stm.setInt(1, tdc.getIdChangDua());
+            stm.setInt(2, tdc.getIdTayDua());
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                return "Đã đăng ký";
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DoiDuaDAO584.class.getName()).log(Level.SEVERE, null, ex);
+            return "Đã đăng ký";
+        }
+
 
         String sql1 = "INSERT INTO `tbltayduachang584` ( mataydua, sothutuxuatphat, diem, thoigian, sovong, tblChangDua584id, tblTayDua584id)\n" +
                 "VALUES ( ?, ?, ?, ?, ?, ?, ?)";
@@ -30,18 +46,15 @@ public class TayDuaChang584DAO extends DAO {
             stm.setInt(5, tdc.getSovong());
             stm.setInt(6, tdc.getIdChangDua());
             stm.setInt(7, tdc.getIdTayDua());
-            System.out.println("test iddd");
-            System.out.println(tdc.getIdTayDua());
 
             if (stm.executeUpdate() <= 0) {
-                return false;
+                return "Lỗi đăng ký tay đua";
             }
             con.commit();
-            check = true;
+            return "ok";
         } catch (SQLException ex) {
             Logger.getLogger(TayDuaChang584DAO.class.getName()).log(Level.SEVERE, null, ex);
-            check = false;
+            return "Lỗi đăng ký tay đua";
         }
-        return check;
     }
 }

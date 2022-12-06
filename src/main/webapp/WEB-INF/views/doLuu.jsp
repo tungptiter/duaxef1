@@ -61,29 +61,43 @@
 
             TayDuaChang584 tdc = new TayDuaChang584(4,"4","s4",0,0,0, idChangDua, idTayDua);
             TayDuaChang584DAO dao = new TayDuaChang584DAO();
-            boolean check = dao.luuDangKy(tdc);
-            if (!check) {
+            String check = dao.luuDangKy(tdc);
+            System.out.println(check);
+            if (check == "Lỗi đăng ký tay đua") {
                 %>
                 <script type="text/javascript">
                     alert("Lỗi lưu đăng ký tay đua 1! Vui lòng đăng ký lại");
                     history.back();
                 </script>
                 <%
+            } else if (check == "Đã đăng ký") {
+                %>
+                    <script type="text/javascript">
+                        alert("Tay đua 1 đã được đăng ký! Vui lòng chọn tay đua khác");
+                        history.back();
+                    </script>
+                <%
             }
 
             TayDuaChang584 tdc2 = new TayDuaChang584(5,"55","s55",0,0,0, idChangDua, idTayDua2);
-            boolean check2 = dao.luuDangKy(tdc2);
-            if (!check2) {
+            String check2 = dao.luuDangKy(tdc2);
+            if (check2 == "Lỗi đăng ký tay đua") {
                 %>
                 <script type="text/javascript">
                     alert("Lỗi lưu đăng ký tay đua 2! Vui lòng đăng ký lại");
                     history.back();
                 </script>
                 <%
+            } else if (check2 == "Đã đăng ký") {
+                %>
+                    <script type="text/javascript">
+                        alert("Tay đua 2 đã được đăng ký! Vui lòng chọn tay đua khác");
+                        history.back();
+                    </script>
+                <%
             }
 
-            if (check && check2) {
-
+            if (check == "ok" && check2 == "ok") {
             }
         }
     %>

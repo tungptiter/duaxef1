@@ -56,6 +56,7 @@
                 color: black;
                 text-decoration: none;
                 cursor: pointer;
+                font-size: 1.3rem;
             }
         </style>
     </head>
@@ -69,11 +70,9 @@
         String  username = "";
         String  password = "";
         if(request.getParameter("username") != null) {
-            System.out.println(request.getParameter("username"));
             username = request.getParameter("username");
         }
         if(request.getParameter("password") != null) {
-            System.out.println(request.getParameter("password"));
             password = request.getParameter("password");
         }
         String tendangnhap = "BTC";

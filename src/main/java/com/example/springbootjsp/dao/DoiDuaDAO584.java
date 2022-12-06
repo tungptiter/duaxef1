@@ -23,7 +23,7 @@ public class DoiDuaDAO584 extends DAO {
             PreparedStatement stm = con.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-                DoiDua584 dd = new DoiDua584( rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
+                DoiDua584 dd = new DoiDua584( rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),  rs.getInt(5));
                 listDoiDua584.add(dd);
             }
         } catch (SQLException ex) {
@@ -43,7 +43,7 @@ public class DoiDuaDAO584 extends DAO {
 
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-                doidua= new DoiDua584( rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
+                doidua= new DoiDua584( rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),  rs.getInt(5));
             }
         } catch (SQLException ex) {
             Logger.getLogger(DoiDuaDAO584.class.getName()).log(Level.SEVERE, null, ex);

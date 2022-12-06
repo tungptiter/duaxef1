@@ -58,13 +58,12 @@
     <%
         ChangDuaDAO584 dao = new ChangDuaDAO584();
         ArrayList<ChangDua584> listChangDua584 = dao.getDSChangDua();
-        System.out.println(listChangDua584);
     %>
         <div class="cd-container">
             <h2> Chọn Chặng Đua </h2>
             <form class="mt-3" name="chonchangdua" action="doidua" method="post" onsubmit="return validateForm()">
                 <select class="form-select" id="floatingSelectCd" name="changdua">
-                    <option value="" selected>Chọn chặng đua</option>
+                    <option value="1" selected>Chọn chặng đua</option>
                     <%
                         for (ChangDua584 cd : listChangDua584) {
                             %>

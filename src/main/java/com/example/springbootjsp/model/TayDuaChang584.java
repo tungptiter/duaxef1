@@ -28,17 +28,6 @@ public class TayDuaChang584 {
         this.idTayDua = idTayDua;
     }
 
-    //    public TayDuaChang584(int id, String mataydua, String sothuxuatphat, int diem, float thoigian, int sovong, ChangDua584 changDua584, TayDua584 tayDua584) {
-//        this.id = id;
-//        this.mataydua = mataydua;
-//        this.sothuxuatphat = sothuxuatphat;
-//        this.diem = diem;
-//        this.thoigian = thoigian;
-//        this.sovong = sovong;
-//        this.changDua584 = changDua584;
-//        this.tayDua584 = tayDua584;
-//    }
-
 
     public int getIdChangDua() {
         return idChangDua;

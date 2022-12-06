@@ -6,14 +6,16 @@ public class DoiDua584 {
     String hang;
     String mota;
 
+    int tblQuanLy584id;
     public DoiDua584() {
     }
 
-    public DoiDua584(int id, String ten, String hang, String mota) {
+    public DoiDua584(int id, String ten, String hang, String mota, int tblQuanLy584id) {
         this.id = id;
         this.ten = ten;
         this.hang = hang;
         this.mota = mota;
+        this.tblQuanLy584id = tblQuanLy584id;
     }
 
     public int getId() {
@@ -46,5 +48,13 @@ public class DoiDua584 {
 
     public void setMota(String mota) {
         this.mota = mota;
+    }
+
+    public int getTblQuanLy584id() {
+        return tblQuanLy584id;
+    }
+
+    public void setTblQuanLy584id(int tblQuanLy584id) {
+        this.tblQuanLy584id = tblQuanLy584id;
     }
 }

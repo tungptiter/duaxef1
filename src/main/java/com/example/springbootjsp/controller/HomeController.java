@@ -17,9 +17,10 @@ import java.util.List;
 
 @Controller
 public class HomeController {
-    @RequestMapping("home")
+
+    @RequestMapping("/")
     public String index() {
-        return "index";
+        return "gdDangNhap";
     }
 
     @RequestMapping("btc")
@@ -44,7 +45,7 @@ public class HomeController {
     }
 
     @RequestMapping("doDangNhap")
-    public String dangnhap() {
+    public String dodangnhap() {
         return "gdChinhBTC";
     }
 
@@ -55,40 +56,7 @@ public class HomeController {
 
     @RequestMapping("dangnhap")
     public String dangNhap(Model model) {
-        Staff staff = new Staff();
-        staff.setFullname("Thin");
-        staff.setId("ABC");
-        model.addAttribute("staff", staff);
-        List<Staff> staffList = new ArrayList<>();
-        staffList.add(staff);
-        model.addAttribute("staffs", staffList);
         return "gdDangNhap";
-    }
-
-    @GetMapping("staff/index")
-    public String index(Model model) {
-        Staff staff = new Staff();
-        staff.setFullname("Thin");
-        staff.setId("ABC");
-        model.addAttribute("staff", staff);
-        List<Staff> staffList = new ArrayList<>();
-        staffList.add(staff);
-        model.addAttribute("staffs", staffList);
-        return "form";
-    }
-    @GetMapping("staff/dkythidau")
-    public String dky(Model model) {
-        Staff staff = new Staff();
-        staff.setFullname("Thin");
-        staff.setId("ABC");
-        model.addAttribute("staff", staff);
-
-        List<Staff> staffList = new ArrayList<>();
-        staffList.add(staff);
-
-        model.addAttribute("staffs", staffList);
-
-        return "form";
     }
 
     @RequestMapping("doLuu")
@@ -98,11 +66,5 @@ public class HomeController {
 //        TayDuaChang584DAO dao = new TayDuaChang584DAO();
 
         return "doLuu";
-    }
-
-    @PostMapping("staff/save")
-    public String save(@ModelAttribute("staff") Staff staff) {
-        staff.setFullname(staff.getFullname().toUpperCase());
-        return "form";
     }
 }

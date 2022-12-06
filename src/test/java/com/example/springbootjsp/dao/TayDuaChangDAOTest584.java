@@ -23,7 +23,7 @@ public class TayDuaChangDAOTest584 {
     public void testGetDSChangDua() {
         TayDuaChang584 tdc = new TayDuaChang584(6,"6","s6",0,0,0, 1, 3);
         TayDuaChang584DAO dao = new TayDuaChang584DAO();
-        boolean check = dao.luuDangKy(tdc);
-        assertTrue(check);
+        String check = dao.luuDangKy(tdc);
+        assertEquals(check, "ok");
     }
 }

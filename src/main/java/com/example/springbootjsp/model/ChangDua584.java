@@ -29,14 +29,6 @@ public class ChangDua584 {
         return id;
     }
 
-    public ChangDua584(int id, String sovongdua, String diadiem, String thoigian, String mota) {
-        this.id = id;
-        this.sovongdua = sovongdua;
-        this.diadiem = diadiem;
-        this.thoigian = thoigian;
-        this.mota = mota;
-    }
-
     public ChangDua584(int id, String sovongdua, String diadiem, String thoigian, String mota, int tblGiaiDua584id) {
         this.id = id;
         this.sovongdua = sovongdua;

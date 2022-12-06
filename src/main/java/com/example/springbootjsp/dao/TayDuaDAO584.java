@@ -23,7 +23,7 @@ public class TayDuaDAO584 extends DAO {
             PreparedStatement stm = con.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-                TayDua584 td = new TayDua584( rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                TayDua584 td = new TayDua584( rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),  rs.getInt(6));
                 listChangDua.add(td);
             }
         } catch (SQLException ex) {
@@ -43,7 +43,7 @@ public class TayDuaDAO584 extends DAO {
 
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-                TayDua584 td = new TayDua584( rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                TayDua584 td = new TayDua584( rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),  rs.getInt(6));
                 listTayDua.add(td);
             }
         } catch (SQLException ex) {

@@ -6,11 +6,14 @@ public class GiaiDua584 {
     String mota;
     String nam;
 
-    public GiaiDua584(int id, String ten, String mota, String nam) {
+    int tblBTC584id;
+
+    public GiaiDua584(int id, String ten, String mota, String nam, int tblBTC584id) {
         this.id = id;
         this.ten = ten;
         this.mota = mota;
         this.nam = nam;
+        this.tblBTC584id = tblBTC584id;
     }
 
     public int getId() {
@@ -43,5 +46,13 @@ public class GiaiDua584 {
 
     public void setNam(String nam) {
         this.nam = nam;
+    }
+
+    public int getTblBTC584id() {
+        return tblBTC584id;
+    }
+
+    public void setTblBTC584id(int tblBTC584id) {
+        this.tblBTC584id = tblBTC584id;
     }
 }

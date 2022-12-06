@@ -53,6 +53,9 @@
                 text-decoration: none;
                 cursor: pointer;
             }
+            h5 {
+                font-weight: 400;
+            }
         </style>
     </head>
 
@@ -77,7 +80,7 @@
             </div>
             <form class="mt-3" name="chondoidua" action="taydua" method="post"  modelAttribute="doidua">
                 <select class="form-select" id="floatingSelectDd" name="doidua">
-                    <option value="ptit" id="dd" selected>Chọn đội đua</option>
+                    <option value="1" id="dd" selected>Chọn đội đua</option>
                     <%
                         for (DoiDua584 dd : listDoiDua584) {
                             %>

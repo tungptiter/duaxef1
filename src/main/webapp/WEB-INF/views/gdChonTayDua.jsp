@@ -46,6 +46,7 @@
             .form-select {
                 min-width: 200px;
                 height: 150px;
+                border-radius: 10px;
             }
             .btn-cancel {
                 background-color: white;
@@ -55,6 +56,10 @@
                 color: black;
                 text-decoration: none;
                 cursor: pointer;
+            }
+
+            h5 {
+                font-weight: 400;
             }
         </style>
     </head>
