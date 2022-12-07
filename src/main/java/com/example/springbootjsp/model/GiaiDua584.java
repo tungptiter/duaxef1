@@ -2,10 +2,14 @@ package com.example.springbootjsp.model;
 
 public class GiaiDua584 {
     int id;
-    String ten;
-    String mota;
-    String nam;
     int tblBTC584id;
+
+    String ten;
+
+    String mota;
+
+    String nam;
+
     BTC584 btc584;
 
     public GiaiDua584(int id, String ten, String mota, String nam, BTC584 btc584) {

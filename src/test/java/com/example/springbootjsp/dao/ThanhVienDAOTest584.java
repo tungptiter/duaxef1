@@ -4,6 +4,7 @@ import com.example.springbootjsp.model.ChangDua584;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.test.annotation.Rollback;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class ThanhVienDAOTest584 {
     @Mock
     Connection connection;
 
+    @Rollback
     @Test
     public void testGetDSChangDua() {
 

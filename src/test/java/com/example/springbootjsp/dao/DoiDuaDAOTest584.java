@@ -4,6 +4,7 @@ import com.example.springbootjsp.model.DoiDua584;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.test.annotation.Rollback;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class DoiDuaDAOTest584 {
     @Mock
     Connection connection;
 
+    @Rollback
     @Test
     public void testGetDSDoiDua() {
 
@@ -32,6 +34,7 @@ public class DoiDuaDAOTest584 {
         }
     }
 
+    @Rollback
     @Test
     public void testGetIdDoiDuaTheoTen() {
         DoiDuaDAO584 dao = new DoiDuaDAO584();
@@ -40,6 +43,7 @@ public class DoiDuaDAOTest584 {
         assertEquals(dao.getIdDoiDuaTheoTen("Toyota JaPan"), 10);
     }
 
+    @Rollback
     @Test
     public void testGetTenDoiDuaTheoId() {
         DoiDuaDAO584 dao = new DoiDuaDAO584();

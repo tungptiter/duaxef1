@@ -5,6 +5,7 @@ import com.example.springbootjsp.model.TayDua584;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.test.annotation.Rollback;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class TayDuaDAOTest584 {
     @Mock
     Connection connection;
 
+    @Rollback
     @Test
     public void testGetDSTayDua() {
         TayDuaDAO584 dao = new TayDuaDAO584();
@@ -38,6 +40,7 @@ public class TayDuaDAOTest584 {
         assertEquals(listTayDua584T2, myListEmpty );
     }
 
+    @Rollback
     @Test
     public void testGetDSTayDuaTheoDoiDua() {
         TayDuaDAO584 dao = new TayDuaDAO584();
@@ -52,6 +55,7 @@ public class TayDuaDAOTest584 {
         }
     }
 
+    @Rollback
     @Test
     public void testGetIdDdTheoIdTd() {
         TayDuaDAO584 dao = new TayDuaDAO584();

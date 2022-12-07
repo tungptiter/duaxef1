@@ -27,33 +27,12 @@ public class TayDuaChang584DAO extends DAO {
             stm.setInt(2, tdc.getIdTayDua());
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-                System.out.println("Da Dang Ky roi 1");
+//                System.out.println("Da Dang Ky roi 1");
                 return "Đã đăng ký";
             }
         } catch (SQLException ex) {
             Logger.getLogger(DoiDuaDAO584.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Da Dang Ky roi 2");
-//            return "chua đăng ký 2";
         }
-
-//        TayDuaDAO584 daoTd = new TayDuaDAO584();
-//        int idDd = daoTd.getIdDdTheoIdTd(tdc.getIdTayDua());
-//        ArrayList<TayDua584> listTayDua584 = daoTd.getDSTayDuaTheoDoiDua(idDd);
-//        int dem = 0;
-//        for (TayDua584 td: listTayDua584) {
-//            if(td.getId() == tdc.getIdTayDua()) {
-//                System.out.println(td.getTen());
-//                System.out.println(tdc.getId());
-//                System.out.println(dem);
-//                dem = dem + 1;
-//                if(dem == 2){
-//                    System.out.println("du thanh vien roi");
-//                    return "Du Tay Dua";
-//                }
-//            }
-//        }
-
-
 
         String sql1 = "INSERT INTO `tbltayduachang584` ( mataydua, sothutuxuatphat, diem, thoigian, sovong, tblChangDua584id, tblTayDua584id)\n" +
                 "VALUES ( ?, ?, ?, ?, ?, ?, ?)";
@@ -78,5 +57,21 @@ public class TayDuaChang584DAO extends DAO {
             Logger.getLogger(TayDuaChang584DAO.class.getName()).log(Level.SEVERE, null, ex);
             return "Lỗi đăng ký tay đua";
         }
+    }
+
+    public TayDuaChang584 getTdc(int idTdc) {
+        TayDuaChang584 tdc = new TayDuaChang584();
+        String sql = "SELECT * FROM `tbltayduachang584`";
+        try {
+            PreparedStatement stm = con.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                tdc = new TayDuaChang584( rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getFloat(5), rs.getInt(6), rs.getInt(7), rs.getInt(8));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TayDuaDAO584.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        return tdc;
     }
 }

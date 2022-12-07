@@ -9,6 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.test.annotation.Rollback;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -28,6 +29,7 @@ public class ChangDuaDAOTest584 {
     @Mock
     Connection connection;
 
+    @Rollback
     @Test
     public void testGetDSChangDua() {
 
@@ -43,6 +45,7 @@ public class ChangDuaDAOTest584 {
         }
     }
 
+    @Rollback
     @Test
     public void testGetChangDuaTheoId() {
         ChangDuaDAO584 dao = new ChangDuaDAO584();
