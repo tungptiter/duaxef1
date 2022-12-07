@@ -60,9 +60,14 @@
             int  idTayDua = Integer.parseInt(request.getParameter("taydua"));
             int  idTayDua2 = Integer.parseInt(request.getParameter("taydua2"));
 
-            TayDuaChang584 tdc = new TayDuaChang584(4,"4","s4",0,0,0, idChangDua, idTayDua);
-            TayDuaChang584DAO dao = new TayDuaChang584DAO();
-            String check = dao.luuDangKy(tdc);
+//            TayDuaChang584 tdc = new TayDuaChang584(4,"4","s4",0,0,0, idChangDua, idTayDua);
+//            TayDuaChang584DAO dao = new TayDuaChang584DAO();
+//            String check = dao.luuDangKy(tdc);
+
+            ChangDuaDAO584 dao = new ChangDuaDAO584();
+            String check = dao.luuThongTin(idChangDua, idTayDua);
+
+
             System.out.println(check);
             if (check == "Lỗi đăng ký tay đua") {
                 %>
@@ -80,8 +85,9 @@
                 <%
             }
 
-            TayDuaChang584 tdc2 = new TayDuaChang584(5,"55","s55",0,0,0, idChangDua, idTayDua2);
-            String check2 = dao.luuDangKy(tdc2);
+//            TayDuaChang584 tdc2 = new TayDuaChang584(5,"55","s55",0,0,0, idChangDua, idTayDua2);
+//            String check2 = dao.luuDangKy(tdc2);
+            String check2 = dao.luuThongTin(idChangDua, idTayDua2);
             if (check2 == "Lỗi đăng ký tay đua") {
                 %>
                 <script type="text/javascript">
