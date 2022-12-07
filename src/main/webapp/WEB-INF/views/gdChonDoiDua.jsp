@@ -23,6 +23,8 @@
 
         <style>
             body {
+
+                background-image: url(https://d9n64ieh9hz8y.cloudfront.net/wp-content/uploads/20180525120241/codemasters-cong-bo-tro-choi-dua-xe-f1-2018-tin-game.jpg);
                 display: flex;
                 align-content: center;
                 justify-content: center;
@@ -34,7 +36,7 @@
                 align-items: center;
                 padding-top: 5%;
                 border-radius: 10px;
-                background-color: #acf9df;
+                background-color: #d9fff2;
                 width: 30%;
                 height: 500px;
             }

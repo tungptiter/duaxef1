@@ -23,5 +23,11 @@ public class ThanhVienDAOTest584 {
         ThanhVienDAO584 dao = new ThanhVienDAO584();
         String tendangnhap = dao.dangNhap("admin", "admin");
         assertEquals(tendangnhap, "thanh");
+
+        String tendangnhap2 = dao.dangNhap("tunglo", "123456");
+        assertEquals(tendangnhap2, "tùng lổ");
+
+        String tendangnhap3 = dao.dangNhap("", "");
+        assertEquals(tendangnhap3, "");
     }
 }

@@ -22,21 +22,29 @@ public class DoiDuaDAOTest584 {
 
         DoiDuaDAO584 dao = new DoiDuaDAO584();
         ArrayList<DoiDua584> listDoiDua584 = dao.getDSDoiDua();
+        int dem = 0;
         for (DoiDua584 cd:   listDoiDua584) {
-            assertEquals(cd.getTen(), "redbull");
-            break;
+            dem++;
+            if(dem == 1)  assertEquals(cd.getTen(), "Redbull");
+            else if(dem == 4)  assertEquals(cd.getTen(), "Vinfastf88");
+            else if(dem == 8)  assertEquals(cd.getTen(), "Huyndai x5");
+            else if(dem > 8) break;
         }
     }
 
     @Test
     public void testGetIdDoiDuaTheoTen() {
         DoiDuaDAO584 dao = new DoiDuaDAO584();
-        assertEquals(dao.getIdDoiDuaTheoTen("redbull"), 1);
+        assertEquals(dao.getIdDoiDuaTheoTen("Redbull"), 1);
+        assertEquals(dao.getIdDoiDuaTheoTen("Ford z8"), 9);
+        assertEquals(dao.getIdDoiDuaTheoTen("Toyota JaPan"), 10);
     }
 
     @Test
     public void testGetTenDoiDuaTheoId() {
         DoiDuaDAO584 dao = new DoiDuaDAO584();
-        assertEquals(dao.getTenDoiDuaTheoId(4), "vinfastf88");
+        assertEquals(dao.getTenDoiDuaTheoId(4), "Vinfastf88");
+        assertEquals(dao.getTenDoiDuaTheoId(5), "Rollroyce 99");
+        assertEquals(dao.getTenDoiDuaTheoId(6), "Mercedes-Benz");
     }
 }

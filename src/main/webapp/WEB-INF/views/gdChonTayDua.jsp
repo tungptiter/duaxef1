@@ -26,6 +26,7 @@
         <style>
             body {
 
+                background-image: url(https://d9n64ieh9hz8y.cloudfront.net/wp-content/uploads/20180525120241/codemasters-cong-bo-tro-choi-dua-xe-f1-2018-tin-game.jpg);
                 display: flex;
                 align-content: center;
                 justify-content: center;
@@ -38,7 +39,7 @@
 
                 padding-top: 5%;
                 border-radius: 10px;
-                background-color: #acf9df;
+                background-color: #d9fff2;
                 width: 30%;
                 height: 500px;
             }
@@ -90,7 +91,9 @@
                     return lastName.compareTo( lastName2 );
                 }
             });
-
+//            if(listTayDua.size() == 2) {
+//
+//            }
             List<TayDua584> listTayDuaFirst = listTayDua.subList(0, listTayDua.size()/2);
             List<TayDua584> listTayDuaLast = listTayDua.subList(listTayDua.size()/2 , listTayDua.size());
 
@@ -143,7 +146,7 @@
                 <button type="button" class="mt-3 btn btn-cancel" style="float:left">
                     <a class="link-back" href="changdua">Quay Lại</a>
                 </button>
-                <button type="submit" class="mt-3 btn btn-primary" style="float:right">Lưu</button>
+                <button type="submit" class="mt-3 btn btn-primary" style="float:right">Đăng ký</button>
             </form>
         </div>
 

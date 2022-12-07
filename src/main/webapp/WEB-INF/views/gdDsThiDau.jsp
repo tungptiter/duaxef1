@@ -35,7 +35,7 @@
 
             padding-top: 5%;
             border-radius: 10px;
-            background-color: #acf9df;
+            background-color: #d9fff2;
             width: 30%;
             height: 500px;
         }

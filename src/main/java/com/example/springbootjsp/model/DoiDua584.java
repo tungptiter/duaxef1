@@ -7,7 +7,18 @@ public class DoiDua584 {
     String mota;
 
     int tblQuanLy584id;
+
+    QuanLy584 quanLy584;
+
     public DoiDua584() {
+    }
+
+    public DoiDua584(int id, String ten, String hang, String mota, QuanLy584 quanLy584) {
+        this.id = id;
+        this.ten = ten;
+        this.hang = hang;
+        this.mota = mota;
+        this.quanLy584 = quanLy584;
     }
 
     public DoiDua584(int id, String ten, String hang, String mota, int tblQuanLy584id) {
@@ -17,7 +28,6 @@ public class DoiDua584 {
         this.mota = mota;
         this.tblQuanLy584id = tblQuanLy584id;
     }
-
     public int getId() {
         return id;
     }

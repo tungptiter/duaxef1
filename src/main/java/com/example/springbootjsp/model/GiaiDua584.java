@@ -5,8 +5,16 @@ public class GiaiDua584 {
     String ten;
     String mota;
     String nam;
-
     int tblBTC584id;
+    BTC584 btc584;
+
+    public GiaiDua584(int id, String ten, String mota, String nam, BTC584 btc584) {
+        this.id = id;
+        this.ten = ten;
+        this.mota = mota;
+        this.nam = nam;
+        this.btc584 = btc584;
+    }
 
     public GiaiDua584(int id, String ten, String mota, String nam, int tblBTC584id) {
         this.id = id;

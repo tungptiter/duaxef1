@@ -12,6 +12,7 @@
 
     <style>
         body{
+            background-image: url(https://d9n64ieh9hz8y.cloudfront.net/wp-content/uploads/20180525120241/codemasters-cong-bo-tro-choi-dua-xe-f1-2018-tin-game.jpg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -19,7 +20,7 @@
         .container-form {
             margin-top: 200px;
             height: 200px;
-            background: #acf9df;
+            background: #d9fff2;
             border-radius: 10px;
             display: flex;
             justify-content: center;

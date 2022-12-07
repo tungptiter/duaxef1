@@ -6,10 +6,19 @@ public class TayDua584 {
     String ngaysinh;
     String quoctich;
     String tieusu;
-
+    DoiDua584 doiDua584;
     int tblDoiDua584id;
 
     public TayDua584() {
+    }
+
+    public TayDua584(int id, String ten, String ngaysinh, String quoctich, String tieusu, DoiDua584 doiDua584) {
+        this.id = id;
+        this.ten = ten;
+        this.ngaysinh = ngaysinh;
+        this.quoctich = quoctich;
+        this.tieusu = tieusu;
+        this.doiDua584 = doiDua584;
     }
 
     public TayDua584(int id, String ten, String ngaysinh, String quoctich, String tieusu, int tblDoiDua584id) {
@@ -60,6 +69,7 @@ public class TayDua584 {
     public void setTieusu(String tieusu) {
         this.tieusu = tieusu;
     }
+
 
     public int getTblDoiDua584id() {
         return tblDoiDua584id;
